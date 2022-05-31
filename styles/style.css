@@ -26,6 +26,13 @@ body {
     font-family: 16px;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .section__plan {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
