@@ -8,6 +8,10 @@
     --active: hsl(71, 73%, 54%);
     --mainbg: hsl(204, 43%, 93%);
     --paragraph: hsl(218, 22%, 67%);
+    --info: hsl(0, 0%, 100%);
+    --summary: hsl(179, 62%, 43%);
+    --about: hsl(179, 53%, 54%);
+    --shadow: hsl(179, 62%, 36%);
 }
 
 * {
@@ -19,17 +23,106 @@
 body {
     font-family: var(--font1);
     background-color: var(--mainbg);
+    font-family: 16px;
 }
 
+.section__plan {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
 
+.container {
+    padding: 25px;
+}
 
+/* info */
 
+.plan__info {
+    display: grid;
+    gap: 20px;
+    background-color: var(--info);
+}
 
+.info__title {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
 
+.info__subtitle {
+    font-size: 1rem;
+    color: var(--active);
+}
 
+.info__paragraph {
+    font-size: .8rem;
+    color: var(--paragraph);
+    line-height: 2;
+}
 
+/* summary */
 
+.plan__summary {
+    display: grid;
+    gap: 10px;
+    background-color: var(--summary);
+}
 
+.summary__title {
+    font-size: 1.1rem;
+    color: var(--info);
+}
+
+.summary__price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price__number {
+    font-size: 2rem;
+    color: var(--info);
+}
+
+.price__paragraph {
+    color: var(--about);
+}
+
+.summary__paragraph {
+    color: var(--mainbg);
+}
+
+.summary__cta {
+    text-decoration: none;
+    color: var(--info);
+    background-color: var(--active);
+    padding: 15px;
+    margin-top: 20px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 10px 5px var(--shadow);
+}
+
+/* about */
+.plan__about {
+    background-color: var(--about);
+    line-height: 1.5;
+}
+
+.about__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--info);
+}
+
+.about__paragraph {
+    font-size: .9rem;
+    color: var(--mainbg);
+}
 
 /* footer */
 
@@ -40,4 +133,32 @@ body {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width:768px) {
+
+    .section__plan {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "info info"
+        "summary about"
+        ;
+        width: 600px;
+    }
+
+    .plan__info {
+        grid-area: info;
+    }
+
+    .plan__summary {
+        grid-area: summary;
+    }
+
+    .summary__cta {
+        padding: 10px;
+    }
+
+    .plan__about {
+        grid-area: about;
+    }
 }
