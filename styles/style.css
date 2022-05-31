@@ -119,9 +119,13 @@ body {
     color: var(--info);
 }
 
-.about__paragraph {
-    font-size: .9rem;
+.about__list {
+    list-style: none;
     color: var(--mainbg);
+}
+
+.about__list__item {
+    font-size: .8rem;
 }
 
 /* footer */
